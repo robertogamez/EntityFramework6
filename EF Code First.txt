@@ -1,0 +1,17 @@
+--Code First to an Existing Database
+https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database
+
+--Rename namepace classes from project
+https://stackoverflow.com/questions/8302567/how-to-change-namespace-of-entire-project/8302755
+
+--Code First Migrations with an existing database 
+https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/existing-database
+
+--Code First Migrations in Team Environments
+https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/teams
+
+--Migrating Production Database with Entity Framework Code First
+https://cpratt.co/migrating-production-database-with-entity-framework-code-first/
+
+--Running & Scripting Migrations from Code
+https://romiller.com/2012/02/09/running-scripting-migrations-from-code/
