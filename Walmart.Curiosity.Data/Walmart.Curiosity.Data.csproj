@@ -108,6 +108,7 @@
     <Compile Include="LogRegaliiDetail.cs" />
     <Compile Include="MasterVendor.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="OpenPayFileTemp.cs" />
     <Compile Include="PagosProveedor.cs" />
