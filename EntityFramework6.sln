@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework6", "EntityFramework6\EntityFramework6.csproj", "{6BB359B6-227C-4B4B-B771-FD6B66CF193D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D1F38B66-DDC0-444C-8C9F-028F28D07E36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{D1F38B66-DDC0-444C-8C9F-028F28D07E36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{DD8D2A5D-AE81-41CA-A876-97167B152939}"
 EndProject
@@ -17,6 +17,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walmart.Curiosity.Data", "Walmart.Curiosity.Data\Walmart.Curiosity.Data.csproj", "{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BD73EDA6-A0AA-4D0A-B30C-AD32DD4D4A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework6.Data.Tests", "EntityFramework6.Data.Tests\EntityFramework6.Data.Tests.csproj", "{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Data", "Store.Data\Store.Data.csproj", "{1805F246-7CAA-415D-9344-437A73960CCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +46,14 @@ Global
 		{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1805F246-7CAA-415D-9344-437A73960CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1805F246-7CAA-415D-9344-437A73960CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1805F246-7CAA-415D-9344-437A73960CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1805F246-7CAA-415D-9344-437A73960CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +63,8 @@ Global
 		{D1F38B66-DDC0-444C-8C9F-028F28D07E36} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
 		{DD8D2A5D-AE81-41CA-A876-97167B152939} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
 		{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
+		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA} = {BD73EDA6-A0AA-4D0A-B30C-AD32DD4D4A71}
+		{1805F246-7CAA-415D-9344-437A73960CCB} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79977052-CCBA-4874-9BBF-668C8EE60918}

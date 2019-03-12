@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD8D2A5D-AE81-41CA-A876-97167B152939}</ProjectGuid>
+    <ProjectGuid>{1805F246-7CAA-415D-9344-437A73960CCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>Store.Data</RootNamespace>
+    <AssemblyName>Store.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,34 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201902191621221_Initial.cs" />
-    <Compile Include="Migrations\201902191621221_Initial.Designer.cs">
-      <DependentUpon>201902191621221_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902192144092_CreateTableCustomer.cs" />
-    <Compile Include="Migrations\201902192144092_CreateTableCustomer.Designer.cs">
-      <DependentUpon>201902192144092_CreateTableCustomer.cs</DependentUpon>
+    <Compile Include="Customers.cs" />
+    <Compile Include="Migrations\201902270300529_Initial.cs" />
+    <Compile Include="Migrations\201902270300529_Initial.Designer.cs">
+      <DependentUpon>201902270300529_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{D1F38B66-DDC0-444C-8C9F-028F28D07E36}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902191621221_Initial.resx">
-      <DependentUpon>201902191621221_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902192144092_CreateTableCustomer.resx">
-      <DependentUpon>201902192144092_CreateTableCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902270300529_Initial.resx">
+      <DependentUpon>201902270300529_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
