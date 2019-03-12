@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework6.Data.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Data", "Store.Data\Store.Data.csproj", "{1805F246-7CAA-415D-9344-437A73960CCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreEffectiveLINQ", "MoreEffectiveLINQ\MoreEffectiveLINQ.csproj", "{AE10B76C-381B-4EC7-9BA9-133B8C7F553B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{1805F246-7CAA-415D-9344-437A73960CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1805F246-7CAA-415D-9344-437A73960CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1805F246-7CAA-415D-9344-437A73960CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE10B76C-381B-4EC7-9BA9-133B8C7F553B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE10B76C-381B-4EC7-9BA9-133B8C7F553B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE10B76C-381B-4EC7-9BA9-133B8C7F553B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE10B76C-381B-4EC7-9BA9-133B8C7F553B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{CC03D4E4-3B9B-4E78-ACB6-87E3FFAEA490} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
 		{FE36D2EC-7B45-49CA-A28E-4F7500AD6CAA} = {BD73EDA6-A0AA-4D0A-B30C-AD32DD4D4A71}
 		{1805F246-7CAA-415D-9344-437A73960CCB} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
+		{AE10B76C-381B-4EC7-9BA9-133B8C7F553B} = {CB21C658-FDEA-4F95-85D1-5ED04AAD4ED2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79977052-CCBA-4874-9BBF-668C8EE60918}
