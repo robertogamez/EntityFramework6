@@ -85,6 +85,33 @@
     <Compile Include="CuriosityContext.cs" />
     <Compile Include="DDLEvent.cs" />
     <Compile Include="EalUtilFile.cs" />
+    <Compile Include="Edmx\CuriosityContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuriosityContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CuriosityContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuriosityContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\CuriosityContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuriosityContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\uspBrokerPersonalInfo_Result.cs">
+      <DependentUpon>CuriosityContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\uspGetLocationByZipCode_Result.cs">
+      <DependentUpon>CuriosityContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\uspGetVendorPaymentType_Result.cs">
+      <DependentUpon>CuriosityContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\uspVendorPersonalInfo_Result.cs">
+      <DependentUpon>CuriosityContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Environment.cs" />
     <Compile Include="FileReceptionConfiguration.cs" />
     <Compile Include="Format.cs" />
@@ -180,7 +207,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Edmx\CuriosityContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CuriosityContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Edmx\CuriosityContext.edmx.diagram">
+      <DependentUpon>CuriosityContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Edmx\CuriosityContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CuriosityContext.edmx</DependentUpon>
+      <LastGenOutput>CuriosityContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Edmx\CuriosityContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CuriosityContext.edmx</DependentUpon>
+      <LastGenOutput>CuriosityContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

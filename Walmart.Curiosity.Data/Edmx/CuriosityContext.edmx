@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CuriosityQAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="uspBrokerPersonalInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BrokerId" Type="int" Mode="In" />
+          <Parameter Name="CountryId" Type="char" Mode="In" />
+        </Function>
+        <Function Name="uspGetLocationByZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+          <Parameter Name="CountryId" Type="char" Mode="In" />
+        </Function>
+        <Function Name="uspGetVendorPaymentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VendorId" Type="int" Mode="In" />
+          <Parameter Name="PaymentTypeCatId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="uspVendorPersonalInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VendorId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="CuriosityQAModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CuriosityQAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CuriosityQAEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="uspVendorPersonalInfo" ReturnType="Collection(CuriosityQAModel.uspVendorPersonalInfo_Result)">
+          <Parameter Name="VendorId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="uspBrokerPersonalInfo" ReturnType="Collection(CuriosityQAModel.uspBrokerPersonalInfo_Result)">
+            <Parameter Name="BrokerId" Mode="In" Type="Int32" />
+            <Parameter Name="CountryId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="uspGetLocationByZipCode" ReturnType="Collection(CuriosityQAModel.uspGetLocationByZipCode_Result)">
+            <Parameter Name="ZipCode" Mode="In" Type="String" />
+            <Parameter Name="CountryId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="uspGetVendorPaymentType" ReturnType="Collection(CuriosityQAModel.uspGetVendorPaymentType_Result)">
+            <Parameter Name="VendorId" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentTypeCatId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="uspVendorPersonalInfo_Result">
+          <Property Type="Int32" Name="VendorId" Nullable="false" />
+          <Property Type="String" Name="RFC" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="VendorNameShort" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LegalName" Nullable="false" MaxLength="1000" />
+          <Property Type="String" Name="CountryId" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="VendorTypeId" Nullable="false" />
+          <Property Type="Int32" Name="BrokerId" Nullable="true" />
+          <Property Type="String" Name="ActivityDescription" Nullable="false" MaxLength="1000" />
+          <Property Type="Int16" Name="RecordStatusId" Nullable="false" />
+          <Property Type="Int16" Name="RecordTypeId" Nullable="false" />
+          <Property Type="Boolean" Name="NegativeAdjustment" Nullable="false" />
+          <Property Type="Boolean" Name="PositiveAdjustment" Nullable="false" />
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Street" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="NumExt" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NumInt" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="ColonyId" Nullable="true" />
+          <Property Type="Int32" Name="CityId" Nullable="true" />
+          <Property Type="Int16" Name="StateId" Nullable="true" />
+          <Property Type="String" Name="CountryId2" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="PhoneTypeId" Nullable="true" />
+          <Property Type="String" Name="ContactEmail" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="uspBrokerPersonalInfo_Result">
+          <Property Type="Int32" Name="BrokerId" Nullable="false" />
+          <Property Type="Int32" Name="PosId" Nullable="true" />
+          <Property Type="String" Name="CountryId" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="Rfc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ShortName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LegalName" Nullable="true" MaxLength="500" />
+          <Property Type="Int16" Name="RecordStatusId" Nullable="true" />
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Street" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="NumExt" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NumInt" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CityId" Nullable="true" />
+          <Property Type="Int16" Name="StateId" Nullable="true" />
+          <Property Type="String" Name="CountryId2" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="PhoneTypeId" Nullable="true" />
+          <Property Type="String" Name="ContactEmail" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="uspGetLocationByZipCode_Result">
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CountryId" Nullable="true" MaxLength="3" />
+          <Property Type="Int32" Name="ColonyId" Nullable="true" />
+          <Property Type="String" Name="ColonyName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CItyId" Nullable="true" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="StateId" Nullable="true" />
+          <Property Type="String" Name="StateName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="uspGetVendorPaymentType_Result">
+          <Property Type="Int32" Name="PaymentTypeId" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PaymentTypeCatId" Nullable="false" />
+          <Property Type="String" Name="CountryId" Nullable="false" MaxLength="3" />
+          <Property Type="Int16" Name="RecordTypeId" Nullable="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="CreatedByUser" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UpdatedByUser" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="IsActived" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CuriosityQAModelStoreContainer" CdmEntityContainer="CuriosityQAEntities" >
+          <FunctionImportMapping FunctionImportName="uspVendorPersonalInfo" FunctionName="CuriosityQAModel.Store.uspVendorPersonalInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuriosityQAModel.uspVendorPersonalInfo_Result">
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="VendorNameShort" ColumnName="VendorNameShort" />
+                <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="VendorTypeId" ColumnName="VendorTypeId" />
+                <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+                <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+                <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+                <ScalarProperty Name="RecordTypeId" ColumnName="RecordTypeId" />
+                <ScalarProperty Name="NegativeAdjustment" ColumnName="NegativeAdjustment" />
+                <ScalarProperty Name="PositiveAdjustment" ColumnName="PositiveAdjustment" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="NumExt" ColumnName="NumExt" />
+                <ScalarProperty Name="NumInt" ColumnName="NumInt" />
+                <ScalarProperty Name="ColonyId" ColumnName="ColonyId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CountryId2" ColumnName="CountryId2" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneTypeId" ColumnName="PhoneTypeId" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspBrokerPersonalInfo" FunctionName="CuriosityQAModel.Store.uspBrokerPersonalInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuriosityQAModel.uspBrokerPersonalInfo_Result">
+                <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+                <ScalarProperty Name="PosId" ColumnName="PosId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Rfc" ColumnName="Rfc" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+                <ScalarProperty Name="RecordStatusId" ColumnName="RecordStatusId" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="NumExt" ColumnName="NumExt" />
+                <ScalarProperty Name="NumInt" ColumnName="NumInt" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CountryId2" ColumnName="CountryId2" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneTypeId" ColumnName="PhoneTypeId" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspGetLocationByZipCode" FunctionName="CuriosityQAModel.Store.uspGetLocationByZipCode">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuriosityQAModel.uspGetLocationByZipCode_Result">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="ColonyId" ColumnName="ColonyId" />
+                <ScalarProperty Name="ColonyName" ColumnName="ColonyName" />
+                <ScalarProperty Name="CItyId" ColumnName="CItyId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspGetVendorPaymentType" FunctionName="CuriosityQAModel.Store.uspGetVendorPaymentType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuriosityQAModel.uspGetVendorPaymentType_Result">
+                <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PaymentTypeCatId" ColumnName="PaymentTypeCatId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="RecordTypeId" ColumnName="RecordTypeId" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedByUser" ColumnName="UpdatedByUser" />
+                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
