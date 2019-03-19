@@ -75,6 +75,29 @@ namespace MoreEffectiveLINQ
                 .Sum();
         }
 
+        static void ChallegueTime()
+        {
+            var result = "2:54,3:48,4:51,3:32,6:15,4:08,5:17,3:13,4:16,3:55,4:53,5:35,4:24"
+                .Split(',')
+                .Select(t => TimeSpan.Parse("0:" + t))
+                .Aggregate((t1, t2) => t1 + t2);
+
+            Console.WriteLine(result);
+        }
+
+        static void ChallengueRange()
+        {
+            var result = "6,1-3,2-4"
+                .Split(',')
+                .Select(x => x.Split('-'));
+                .Select(p => new { First = int.Parse(p[0]), Last = int.Parse(p.Last()) });
+                .SelectMany(r => Enumerable.Range(r.First, r.Last - r.First + 1))
+                .OrderBy(r => r)
+                .Distinct();
+
+            Console.WriteLine(result);
+        }
+
         static void Main(string[] args)
         {
             //var customers = new[] {
@@ -90,8 +113,7 @@ namespace MoreEffectiveLINQ
             //foreach (var customer in customers.Where(c => !string.IsNullOrEmpty(c.Email)))
             //{
             //    Console.WriteLine("Sending email to {0}", customer.Name);
-            CountRefundedOrders();
-            GetOrderTotal();
+            ChallengueRange();
 
             Console.ReadLine();
         }
