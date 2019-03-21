@@ -98,6 +98,64 @@ namespace MoreEffectiveLINQ
             Console.WriteLine(result);
         }
 
+        static void BishopMoves()
+        {
+            var result = Enumerable.Range('a', 8).SelectMany(x => Enumerable.Range('1', 8),
+                    (f, r) => new { File = (char)f, Rank = (char)r })
+                    .Select(x => new { x.File, x.Rank, dx = Math.Abs(x.File - 'c'), dy = Math.Abs(x.Rank - '6') })
+                    .Where(x => x.dx == x.dy && x.dx != 0)
+                    .Select(x => string.Format("{0}{1}", x.File, x.Rank));
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        static void QueryExpressionExample()
+        {
+            var result = from row in Enumerable.Range('a', 8)
+                         from col in Enumerable.Range('1', 8)
+                         let dx = Math.Abs(row - 'c')
+                         let dy = Math.Abs(col - '6')
+                         where dx == dy && dx != 0
+                         select string.Format("{0}{1}", (char)row, (char)col);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        static void LongestBook()
+        {
+            var books = new[] {
+                new { Author = "Robert Martin", Title = "Clean Code", Pages = 464 },
+                new { Author = "Oliver Sturm", Title = "Functional Programming in C#" , Pages = 270 },
+                new { Author = "Martin Fowler", Title = "Patterns of Enterprise Application Architecture", Pages = 533 },
+                new { Author = "Bill Wagner", Title = "Effective C#", Pages = 328 }
+            };
+
+            var mostPages = books.Max(x => x.Pages);
+            var book = books.First(b => b.Pages == mostPages);
+
+            Console.WriteLine(book);
+        }
+
+        static void LongestBookAggregate()
+        {
+            var books = new[] {
+                new { Author = "Robert Martin", Title = "Clean Code", Pages = 464 },
+                new { Author = "Oliver Sturm", Title = "Functional Programming in C#" , Pages = 270 },
+                new { Author = "Martin Fowler", Title = "Patterns of Enterprise Application Architecture", Pages = 533 },
+                new { Author = "Bill Wagner", Title = "Effective C#", Pages = 328 }
+            };
+
+            var book = books.Aggregate((agg, next) => next.Pages > agg.Pages ? next : agg);
+
+            Console.WriteLine(book);
+        }
+
         static void Main(string[] args)
         {
             //var customers = new[] {
@@ -113,9 +171,10 @@ namespace MoreEffectiveLINQ
             //foreach (var customer in customers.Where(c => !string.IsNullOrEmpty(c.Email)))
             //{
             //    Console.WriteLine("Sending email to {0}", customer.Name);
-            ChallengueRange();
+            LongestBook();
+            LongestBookAggregate();
 
-            Console.ReadLine();
+            Console.Read();
         }
     }
 }
